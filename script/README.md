@@ -22,3 +22,11 @@ python kolla_iptables.py
 ```
 python nic_bind.py
 ```
+
+### trove 初始化 mysql
+
+先上传 mysql 镜像
+
+```
+bash trove_mysql_init.sh c91582d9-c489-4714-87cb-6795c90f737e
+```
