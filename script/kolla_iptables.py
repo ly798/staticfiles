@@ -1,4 +1,5 @@
 # (<port>, <source>, <procotol>, <desc>)
+# <source> 不写则会为 sources 每一条都生成一个规则
 rules = {
     "basic": [
         ('22', '0.0.0.0/0', 'tcp', 'ssh'),
@@ -19,6 +20,7 @@ rules = {
         ('4369', '0.0.0.0/0', 'tcp', 'rabbitmq'),
         ('5140', '', 'udp', 'fluentd'),
         ('1984', '', 'tcp', 'haproxy-stats'),
+        ('6379', '', 'tcp', 'redis'),
     ],
     "keystone": [
         ('5000', '', 'tcp', 'keystone'),
@@ -113,6 +115,7 @@ def main():
             if source:
                 print rule_str.format(
                     port=port, protocol=protocol, desc=desc, source=source)
+                continue
             for s in sources:
                 print rule_str.format(
                     port=port, protocol=protocol, desc=desc, source=s)
