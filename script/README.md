@@ -14,3 +14,11 @@ curl -sSL https://raw.githubusercontent.com/ly798/staticfiles/master/script/set_
 ```
 python kolla_iptables.py
 ```
+
+### 设置网卡绑定(centos)
+
+先按照要求修改脚本参数
+
+```
+python nic_bind.py
+```
